@@ -1,0 +1,8 @@
+<h1>All Orders: </h1>
+
+<% @cupcake_orders.each do |order| %>
+  <h5>Name: <%= order.user.name %></h5>
+  <h6>Cupcake: <%= order.cupcake.name %></h6>
+  <h6>Total: $<%= order.cupcake.price*order.count  %></h6>
+  <hr>
+<% end %>

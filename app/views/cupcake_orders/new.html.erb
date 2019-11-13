@@ -1,0 +1,17 @@
+<h1>New Cupcake Order</h1>
+<br>
+<%= form_for @cupcake_order, :url => '/cupcake_orders' do |f| %>
+  Name: <%= f.collection_select :user_id, User.all, :id, :name, prompt: true %>
+  <br>
+  Cupcake: <%= f.collection_select :cupcake_id, Cupcake.all, :id, :name, prompt: true %>
+  <br>
+  <%= f.label :count %>
+  <%= f.number_field :count %>
+  <br>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', cupcakes_path %>

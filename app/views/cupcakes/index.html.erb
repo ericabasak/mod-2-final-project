@@ -1,0 +1,16 @@
+
+<h1>Welcome to Flatiron Bake Shop</h1>
+
+<h2><% @cupcakes.each do |cupcake| %></h2>
+    <br>
+    <strong>Name:</strong>
+    <%= link_to cupcake.name, cupcake_path(cupcake) %>
+    <br>
+    <strong>Description:</strong>
+    <%= cupcake.description %>
+    <br>
+    <%= link_to "Learn more", cupcake_path(cupcake) %>
+    <br>
+    <%= link_to "Buy Now", new_cupcake_order_path %>
+    <br>
+<% end %>

@@ -1,0 +1,52 @@
+
+<div class="row">
+<h1 style="text-align:left;"> <%= @cupcake_order.user.name %> Order: </h1>
+</div>
+
+<table align="center" class="table table-striped">
+
+<tr>
+<td>
+Cupcake:
+</td>
+<td>
+Price: 
+</td>
+<td>
+Quantity:
+</td>
+<td>
+Total:
+</td>
+<td>
+</td>
+<td>
+</td>
+<%# end of table row %>
+</tr>
+<% @user_cupcakes_order.each do |cupcake_order| %>
+<tr>
+<td>
+<%= cupcake_order.cupcake.name %>
+</td>
+<td>
+$ <%= cupcake_order.cupcake.price %>
+</td>
+<td>
+<%= cupcake_order.count %>
+</td>
+<td>
+$ <%= cupcake_order.cupcake.price*cupcake_order.count  %>
+</td>
+<td>
+<%= link_to 'Edit', edit_cupcake_order_path(cupcake_order) %>
+</td>
+<td>
+<%= link_to 'Remove', delete_cupcake_order_path(cupcake_order), method: :delete %>
+</td>
+</tr> 
+<% end %>
+</table>
+
+
+

@@ -1,0 +1,29 @@
+td{
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  padding: 10px 0;
+  background-color: #c5c0c3;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+/* Other Classes for Page Styling */
+
+body {
+  background: #f1b2d5
+}
