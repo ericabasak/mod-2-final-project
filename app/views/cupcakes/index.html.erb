@@ -1,7 +1,9 @@
+<h1 class="text-center"> Welcome to Flatiron Bake Shop</h1>
 
-<h1>Welcome to Flatiron Bake Shop</h1>
+<div class="row">
 
 <h2><% @cupcakes.each do |cupcake| %></h2>
+    <div class="col-lg-4">
     <br>
     <strong>Name:</strong>
     <%= link_to cupcake.name, cupcake_path(cupcake) %>
@@ -13,4 +15,6 @@
     <br>
     <%= link_to "Buy Now", new_cupcake_order_path %>
     <br>
+    </div>
 <% end %>
+</div>

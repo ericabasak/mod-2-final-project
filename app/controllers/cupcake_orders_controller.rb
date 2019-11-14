@@ -4,6 +4,12 @@ class CupcakeOrdersController < ApplicationController
     @cupcake_orders = CupcakeOrder.all
     @cupcakes = Cupcake.all
     @users = User.all
+    
+    @cupcake_orders = if logged_in?
+      current_user.cupcake_orders
+    else
+      CupcakeOrder.all
+    end
   end
 
   def new
@@ -17,8 +23,6 @@ class CupcakeOrdersController < ApplicationController
     @cupcakes = Cupcake.all
     @users = User.all
     @user_cupcakes_order = @cupcake_order.user.cupcake_orders
-    byebug
-
   end
 
   def create

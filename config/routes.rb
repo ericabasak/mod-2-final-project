@@ -6,10 +6,16 @@ Rails.application.routes.draw do
 
   get '/', to: 'welcome#index', as: 'welcome'
 
+
   get '/location', to: 'location#index', as: 'location'
+
 
   get '/contact_us', to: 'contact_us#index', as: 'contact_us'
 
+
+  get 'login', to: 'sessions#new', as: 'login'
+  post 'sessions', to: 'sessions#create', as: 'sessions'
+  delete 'sessions', to: 'sessions#destroy'
 
   get '/cupcakes', to: 'cupcakes#index', as: 'cupcakes'
   get '/cupcakes/:id', to: 'cupcakes#show', as: 'cupcake'
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
   delete '/cupcakes/:id', to: 'cupcakes#destroy', as: 'delete_cupcake'
 
 
+  # resources :users, only[:new, :show, :create]
   get '/users', to: 'users#index', as: 'users'
   get '/users/new', to: 'users#new', as: 'new_user'
   get '/users/:id', to: 'users#show', as: 'user'

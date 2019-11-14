@@ -18,9 +18,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to login_path
     else
+      flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
     end
   end
@@ -49,7 +51,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :password)
   end
 
 
