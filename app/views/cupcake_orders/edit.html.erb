@@ -1,6 +1,6 @@
 <h1>Edit your Order</h1>
 <br>
-<%= form_for @cupcake_order, :url => '/cupcake_orders' do |f| %>
+<%= form_for @cupcake_order, :url => "/cupcake_orders/#{@cupcake_order.id}" do |f| %>
   Name: <%= f.collection_select :user_id, User.all, :id, :name, prompt: true %>
   <br>
   Cupcake: <%= f.collection_select :cupcake_id, Cupcake.all, :id, :name, prompt: true %>

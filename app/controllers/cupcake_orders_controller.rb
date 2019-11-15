@@ -31,6 +31,7 @@ class CupcakeOrdersController < ApplicationController
       if @cupcake_order.save
         redirect_to user_cupcake_orders_path(@user)
       else
+        flash[:error] = "Invalid order"
         redirect_to new_cupcake_order_path
       end
   end

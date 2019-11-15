@@ -5,6 +5,11 @@
 <h2><% @cupcakes.each do |cupcake| %></h2>
     <div class="col-lg-4">
     <br>
+
+    <div id="logo">
+
+    <%= image_tag(cupcake.image, class: "img-fluid") if cupcake.image.attached? %>
+    </div>
     <strong>Name:</strong>
     <%= link_to cupcake.name, cupcake_path(cupcake) %>
     <br>
@@ -15,6 +20,7 @@
     <br>
     <%= link_to "Buy Now", new_cupcake_order_path %>
     <br>
+    <%= link_to "Edit Cupcake", edit_cupcake_path(cupcake) %>
     </div>
 <% end %>
 </div>

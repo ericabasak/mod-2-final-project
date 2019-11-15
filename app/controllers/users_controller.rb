@@ -30,10 +30,8 @@ class UsersController < ApplicationController
   def all_cupcake_orders
     #1. find user
     #2. get user's cupcake orders
-
     @user = User.find(params[:id])
     @cupcake_orders = @user.cupcake_orders
-  
   end
 
   def destroy
